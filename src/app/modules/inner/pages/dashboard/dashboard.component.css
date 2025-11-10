@@ -1,0 +1,173 @@
+/* Dashboard Component Styles */
+
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-sticky {
+  height: calc(100vh - 48px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #343a40 0%, #495057 100%);
+  position: relative;
+}
+
+.bg-gradient-dark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="75" cy="45" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="45" cy="65" r="2" fill="rgba(255,255,255,0.03)"/></svg>');
+  animation: float 25s infinite linear;
+}
+
+.modern-nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.modern-nav-link:hover {
+  color: white !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: translateX(5px);
+}
+
+.modern-nav-link.active {
+  color: white !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.main-content {
+  margin-left: 240px;
+  transition: margin-left 0.3s ease;
+}
+
+.stats-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.table-hover tbody tr:hover {
+  background: rgba(13, 110, 253, 0.05);
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
+.badge {
+  font-weight: 500;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.card-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .sidebar {
+    position: relative;
+    height: auto;
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .modern-nav-link {
+    margin: 0;
+    padding: 0.75rem 1rem !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .btn-toolbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .stats-card {
+    margin-bottom: 1rem;
+  }
+  
+  .table-responsive {
+    font-size: 0.875rem;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(120deg); }
+  66% { transform: translateY(5px) rotate(240deg); }
+  100% { transform: translateY(0px) rotate(360deg); }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Button group improvements */
+.btn-group-sm .btn {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+}
+
+.btn-group-sm .btn.active {
+  background: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: white;
+}
+
+/* Chart container */
+.chart-container {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Badge colors */
+.badge.bg-primary { background: linear-gradient(135deg, #007bff, #0056b3) !important; }
+.badge.bg-success { background: linear-gradient(135deg, #28a745, #1e7e34) !important; }
+.badge.bg-warning { background: linear-gradient(135deg, #ffc107, #e0a800) !important; }
+.badge.bg-danger { background: linear-gradient(135deg, #dc3545, #c82333) !important; }
+.badge.bg-info { background: linear-gradient(135deg, #17a2b8, #138496) !important; }
+.badge.bg-secondary { background: linear-gradient(135deg, #6c757d, #5a6268) !important; }

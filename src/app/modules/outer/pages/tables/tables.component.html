@@ -1,0 +1,134 @@
+<div class="container myTables">
+  <h1>Historial Médico Veterinario</h1>
+  <br/>
+  <button type="button" class="btn btn-primary text-white" data-bs-toggle="modal" data-bs-target="#medicalRecordModal">Nuevo historial médico</button>
+  <br/>
+  <br/>
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Mascota</th>
+        <th scope="col">Propietario</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Diagnóstico</th>
+        <th scope="col">Tratamiento</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of medicalRecords; track item.id) {
+        <tr>
+          <td>{{item.petName}}</td>
+          <td>{{item.ownerName}}</td>
+          <td>{{item.date}}</td>
+          <td>{{item.diagnosis}}</td>
+          <td>{{item.treatment}}</td>
+          <td>
+            <div class="d-flex gap-2">
+              <button type="button" class="btn btn-primary text-white flex-grow-1" (click)="verHistorial(item)">Ver</button>
+              <button type="button" class="btn btn-secondary text-white flex-grow-1" (click)="abrirEditarHistorial(item)">Editar</button>
+              <button type="button" class="btn btn-danger flex-grow-1" (click)="eliminarHistorial(item)">Eliminar</button>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <!-- Modal agregar historial médico -->
+  <div class="modal fade" id="medicalRecordModal" tabindex="-1" aria-labelledby="medicalRecordModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="medicalRecordModalLabel">Agregar nuevo Historial Médico</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form #medicalRecordForm="ngForm" (ngSubmit)="addMedicalRecord(medicalRecordForm.value, medicalRecordForm)">
+            <input type="text" class="form-control" placeholder="Nombre de la mascota" name="petName" ngModel>
+            <br>
+              <input type="text" class="form-control" placeholder="Nombre del propietario" name="ownerName" ngModel>
+              <br>
+                <input type="date" class="form-control" placeholder="Fecha" name="date" ngModel>
+                <br>
+                  <input type="text" class="form-control" placeholder="Diagnóstico" name="diagnosis" ngModel>
+                  <br>
+                    <textarea class="form-control" placeholder="Tratamiento" name="treatment" ngModel rows="3"></textarea>
+                    <br>
+                        <div class="d-flex justify-content-end gap-2">
+                          <button type="submit" class="btn text-white" style="background-color: #dc3545;">Agregar Historial</button>
+                          <button type="button" class="btn text-white" style="background-color: #6c757d;" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Modal Detalles Historial -->
+              <div class="modal fade" id="verHistorialModal" tabindex="-1" aria-labelledby="verHistorialModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="verHistorialModalLabel">Detalles del Historial Médico</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    @if (selectedRecord) {
+                      <div class="modal-body">
+                        <ul class="list-group">
+                          <li class="list-group-item"><strong>Mascota:</strong> {{selectedRecord.petName}}</li>
+                          <li class="list-group-item"><strong>Propietario:</strong> {{selectedRecord.ownerName}}</li>
+                          <li class="list-group-item"><strong>Fecha:</strong> {{selectedRecord.date}}</li>
+                          <li class="list-group-item"><strong>Diagnóstico:</strong> {{selectedRecord.diagnosis}}</li>
+                          <li class="list-group-item"><strong>Tratamiento:</strong> {{selectedRecord.treatment}}</li>
+                        </ul>
+                      </div>
+                    }
+                    <div class="modal-footer">
+                      <button type="button" class="btn text-white" style="background-color: #6c757d;" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Modal Editar Historial -->
+              <div class="modal fade" id="editarHistorialModal" tabindex="-1" aria-labelledby="editarHistorialModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="editarHistorialModalLabel">Editar Historial Médico</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      @if (editRecord) {
+                        <form #editForm="ngForm" (ngSubmit)="updateMedicalRecord(editForm)">
+                          <label for="editPetName" class="form-label"><strong>Mascota:</strong></label>
+                          <input id="editPetName" type="text" class="form-control" placeholder="Nombre de la mascota" name="petName" [(ngModel)]="editRecord.petName">
+                          <br>
+                            <label for="editOwnerName" class="form-label"><strong>Propietario:</strong></label>
+                            <input id="editOwnerName" type="text" class="form-control" placeholder="Nombre del propietario" name="ownerName" [(ngModel)]="editRecord.ownerName">
+                            <br>
+                              <label for="editDate" class="form-label"><strong>Fecha:</strong></label>
+                              <input id="editDate" type="date" class="form-control" name="date" [(ngModel)]="editRecord.date">
+                              <br>
+                                <label for="editDiagnosis" class="form-label"><strong>Diagnóstico:</strong></label>
+                                <input id="editDiagnosis" type="text" class="form-control" placeholder="Diagnóstico" name="diagnosis" [(ngModel)]="editRecord.diagnosis">
+                                <br>
+                                  <label for="editTreatment" class="form-label"><strong>Tratamiento:</strong></label>
+                                  <textarea id="editTreatment" class="form-control" placeholder="Tratamiento" name="treatment" [(ngModel)]="editRecord.treatment" rows="3"></textarea>
+                                  <br>
+                                      <div class="d-flex justify-content-end gap-2">
+                                        <button type="submit" class="btn text-white" style="background-color: #6f42c1;">Guardar Cambios</button>
+                                        <button type="button" class="btn text-white" style="background-color: #6c757d;" data-bs-dismiss="modal">Cerrar</button>
+                                      </div>
+                                    </form>
+                                  }
+                                </div>
+                                <div class="modal-footer"></div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>

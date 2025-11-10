@@ -1,0 +1,336 @@
+<!-- Hero Section -->
+<section class="hero-section text-white position-relative">
+  <div class="container">
+    <div class="row align-items-center min-vh-100 py-5">
+      <div class="col-lg-6 animate-slide-up">
+        <div class="d-flex align-items-center mb-4">
+          <div class="me-4 d-flex align-items-center">
+            <span class="veterinary-icon extra-large me-2" style="font-size: 4rem;">🐕</span>
+            <span class="veterinary-icon" style="font-size: 3rem;">🐾</span>
+          </div>
+          <div>
+            <h1 class="display-3 fw-bold mb-0">Clínica Veterinaria</h1>
+            <h1 class="display-3 fw-bold text-warning">PetCare</h1>
+          </div>
+        </div>
+        <p class="lead mb-5 fs-4">
+          <span class="veterinary-icon me-2">❤️</span>
+          Cuidamos a tus mascotas con amor y profesionalismo. Más de 15 años brindando el mejor servicio veterinario.
+        </p>
+        <div class="d-flex gap-4 flex-wrap">
+          <button class="btn btn-light btn-lg btn-modern d-flex align-items-center px-5 py-3" routerLink="/gallery">
+            <span class="veterinary-icon me-3">🏥</span>
+            <span>Nuestros Servicios</span>
+          </button>
+          <button class="btn btn-outline-light btn-lg btn-modern d-flex align-items-center px-5 py-3" routerLink="/customers">
+            <span class="veterinary-icon me-3">👥</span>
+            <span>Clientes y Mascotas</span>
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center animate-fade-in">
+        <div class="position-relative">
+          <div class="main-pet-image mb-4">
+      <div class="hero-image-container position-relative">
+    <!-- Imagen principal -->
+                <img 
+                  src="https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg"
+                  alt="Veterinario cuidando mascota"
+                  class="img-fluid rounded-4 shadow-lg hero-main-image"
+                  style="max-height: 400px; width: 100%; object-fit: cover;"
+                  onerror="this.style.display='none'; this.parentElement.querySelector('.hero-fallback').classList.remove('d-none'); feather.replace();"
+                >
+
+                <!-- Fallback si la imagen falla -->
+                <div class="hero-fallback d-none position-absolute top-0 start-0 w-100 h-100 
+                            d-flex flex-column align-items-center justify-content-center text-white text-center rounded-4"
+                    style="background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%); z-index: 2;">
+                  
+                  <div class="d-flex gap-4 mb-4">
+                    <i data-feather="heart" style="width: 48px; height: 48px; color: #ff4d6d;"></i>
+                    <i data-feather="activity" style="width: 48px; height: 48px; color: #ffd43b;"></i>
+                    <i data-feather="shield" style="width: 48px; height: 48px; color: #f8f9fa;"></i>
+                  </div>
+
+                  <h2 class="fw-bold text-white mb-1">PetCare</h2>
+                  <p class="fs-5 text-light opacity-90">Clínica Veterinaria Profesional</p>
+                </div>
+
+
+              </div>
+            </div>
+
+          
+          <!-- Decorative pet icons around the image -->
+          <div class="floating-pets">
+            <span class="veterinary-icon position-absolute animate-float" 
+                  style="top: -20px; left: -20px; font-size: 2.5rem; animation-delay: 0s;">🐶</span>
+            <span class="veterinary-icon position-absolute animate-float" 
+                  style="top: -10px; right: -30px; font-size: 2rem; animation-delay: 1s;">🐱</span>
+            <span class="veterinary-icon position-absolute animate-float" 
+                  style="bottom: -20px; left: -10px; font-size: 1.8rem; animation-delay: 2s;">🐰</span>
+            <span class="veterinary-icon position-absolute animate-float" 
+                  style="bottom: -15px; right: -20px; font-size: 2.2rem; animation-delay: 0.5s;">🐾</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section py-5 bg-light">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-12 animate-fade-in">
+        <h2 class="display-5 fw-bold mb-4">¿Por qué confiar en nosotros?</h2>
+        <p class="lead text-muted fs-5">Brindamos el mejor cuidado veterinario para tus mascotas</p>
+      </div>
+    </div>
+    <div class="row g-5">
+      <div class="col-md-4">
+        <div class="feature-card modern-card text-center h-100 animate-scale-in">
+          <div class="feature-icon mb-4">
+            <span class="veterinary-icon extra-large text-danger">🚨</span>
+          </div>
+          <h4 class="fw-bold mb-3 text-dark">Emergencias 24/7</h4>
+          <p class="text-muted lh-lg">Atención de emergencias las 24 horas del día. Tu mascota siempre estará protegida.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card modern-card text-center h-100 animate-scale-in">
+          <div class="feature-icon mb-4">
+            <span class="veterinary-icon extra-large text-warning">🏆</span>
+          </div>
+          <h4 class="fw-bold mb-3 text-dark">Profesionales Certificados</h4>
+          <p class="text-muted lh-lg">Veterinarios con más de 15 años de experiencia y certificaciones internacionales.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card modern-card text-center h-100 animate-scale-in">
+          <div class="feature-icon mb-4">
+            <span class="veterinary-icon extra-large text-danger">❤️</span>
+          </div>
+          <h4 class="fw-bold mb-3 text-dark">Amor por los Animales</h4>
+          <p class="text-muted lh-lg">Tratamos a cada mascota con el cariño y respeto que se merece, como si fuera nuestra.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section bg-gradient-light py-5">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-3 col-6 mb-4 animate-fade-in">
+        <div class="stat-item">
+          <div class="mb-3">
+            <span class="veterinary-icon large text-primary">🏥</span>
+          </div>
+          <h3 class="display-4 fw-bold text-primary">2500+</h3>
+          <p class="text-muted fw-medium">Mascotas Atendidas</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 mb-4 animate-fade-in">
+        <div class="stat-item">
+          <div class="mb-3">
+            <span class="veterinary-icon large text-success">👨‍👩‍👧‍👦</span>
+          </div>
+          <h3 class="display-4 fw-bold text-success">1200+</h3>
+          <p class="text-muted fw-medium">Familias Satisfechas</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 mb-4 animate-fade-in">
+        <div class="stat-item">
+          <div class="mb-3">
+            <span class="veterinary-icon large text-warning">⭐</span>
+          </div>
+          <h3 class="display-4 fw-bold text-warning">15</h3>
+          <p class="text-muted fw-medium">Años de Experiencia</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 mb-4 animate-fade-in">
+        <div class="stat-item">
+          <div class="mb-3">
+            <span class="veterinary-icon large text-info">🚨</span>
+          </div>
+          <h3 class="display-4 fw-bold text-info">24h</h3>
+          <p class="text-muted fw-medium">Atención de Emergencia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="categories-section py-5 bg-light">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-12 animate-fade-in">
+        <h2 class="display-5 fw-bold mb-4">Nuestros Servicios</h2>
+        <p class="lead text-muted fs-5">Ofrecemos una amplia gama de servicios veterinarios</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="category-card modern-card position-relative overflow-hidden rounded-3 shadow-lg animate-scale-in">
+          <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=250&q=80" 
+               alt="Consultas Generales" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+          <div class="category-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+            <div class="text-center text-white">
+              <div class="mb-3">
+                <span class="veterinary-icon extra-large">🩺</span>
+              </div>
+              <h4 class="fw-bold mb-3">Consultas Generales</h4>
+              <button class="btn btn-modern btn-outline-light d-flex align-items-center mx-auto" routerLink="/gallery">
+                <span class="veterinary-icon me-2">👁️</span>Ver Más
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="category-card modern-card position-relative overflow-hidden rounded-3 shadow-lg animate-scale-in">
+          <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=250&q=80" 
+               alt="Cirugías" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+          <div class="category-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+            <div class="text-center text-white">
+              <div class="mb-3">
+                <span class="veterinary-icon extra-large">🔬</span>
+              </div>
+              <h4 class="fw-bold mb-3">Cirugías</h4>
+              <button class="btn btn-modern btn-outline-light d-flex align-items-center mx-auto" routerLink="/gallery">
+                <span class="veterinary-icon me-2">👁️</span>Ver Más
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="category-card modern-card position-relative overflow-hidden rounded-3 shadow-lg animate-scale-in">
+          <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=250&q=80" 
+               alt="Vacunación" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+          <div class="category-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+            <div class="text-center text-white">
+              <div class="mb-3">
+                <span class="veterinary-icon extra-large">💉</span>
+              </div>
+              <h4 class="fw-bold mb-3">Vacunación</h4>
+              <button class="btn btn-modern btn-outline-light d-flex align-items-center mx-auto" routerLink="/gallery">
+                <span class="veterinary-icon me-2">👁️</span>Ver Más
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section bg-gradient-dark text-white py-5">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-12 animate-fade-in">
+        <h2 class="display-5 fw-bold mb-4">¿Tu mascota necesita atención?</h2>
+        <p class="lead mb-5 fs-5">Agenda una cita hoy mismo y dale a tu mascota el cuidado que se merece</p>
+        <div class="d-flex gap-4 justify-content-center flex-wrap">
+          <button class="btn btn-modern btn-primary btn-lg d-flex align-items-center px-5 py-3" routerLink="/auth/login">
+            <span class="veterinary-icon me-3 large">📅</span>
+            <span>Agendar Cita</span>
+          </button>
+          <button class="btn btn-modern btn-outline-light btn-lg d-flex align-items-center px-5 py-3" routerLink="/gallery">
+            <span class="veterinary-icon me-3 large">📞</span>
+            <span>Contactar Ahora</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section py-5">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-12 animate-fade-in">
+        <h2 class="display-5 fw-bold mb-4">Lo que dicen nuestros clientes</h2>
+        <p class="lead text-muted fs-5">Testimonios reales de familias satisfechas</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="testimonial-card modern-card h-100 animate-scale-in">
+          <div class="d-flex align-items-center mb-4">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=60&h=60&q=80" 
+                 alt="Cliente" class="rounded-circle me-3 shadow-sm" width="60" height="60" style="object-fit: cover;">
+            <div>
+              <h5 class="mb-1 fw-bold">María González</h5>
+              <small class="text-muted">Dueña de Max (Golden Retriever)</small>
+            </div>
+          </div>
+          <p class="text-muted mb-4 lh-lg">"Excelente atención, salvaron la vida de mi Max. Los veterinarios son muy profesionales y el trato es excepcional."</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="text-warning fs-5">
+              <span class="veterinary-icon">⭐</span>
+              <span class="veterinary-icon">⭐</span>
+              <span class="veterinary-icon">⭐</span>
+              <span class="veterinary-icon">⭐</span>
+              <span class="veterinary-icon">⭐</span>
+            </div>
+            <small class="text-success fw-bold">Verificado</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="testimonial-card modern-card h-100 animate-scale-in">
+          <div class="d-flex align-items-center mb-4">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=60&h=60&q=80" 
+                 alt="Cliente" class="rounded-circle me-3 shadow-sm" width="60" height="60" style="object-fit: cover;">
+            <div>
+              <h5 class="mb-1 fw-bold">Carlos Rodríguez</h5>
+              <small class="text-muted">Dueño de Luna (Gata Persa)</small>
+            </div>
+          </div>
+          <p class="text-muted mb-4 lh-lg">"El servicio de emergencia 24/7 es fantástico. Cuando Luna tuvo problemas, nos atendieron inmediatamente."</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="text-warning fs-5">
+              <span class="veterinary-icon">⭐</span>
+              <span class="veterinary-icon">⭐</span>
+              <span class="veterinary-icon">⭐</span>
+              <span class="veterinary-icon">⭐</span>
+              <span class="veterinary-icon">⭐</span>
+            </div>
+            <small class="text-success fw-bold">Verificado</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="testimonial-card modern-card h-100 animate-scale-in">
+          <div class="d-flex align-items-center mb-4">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=60&h=60&q=80" 
+                 alt="Cliente" class="rounded-circle me-3 shadow-sm" width="60" height="60" style="object-fit: cover;">
+            <div>
+              <h5 class="mb-1 fw-bold">Ana López</h5>
+              <small class="text-muted">Dueña de Rocky (Pastor Alemán)</small>
+            </div>
+          </div>
+          <p class="text-muted mb-4 lh-lg">"Llevan años cuidando a Rocky. Son como una familia para nosotros. Altamente recomendados."</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="text-warning fs-5">
+              <span class="veterinary-icon">⭐</span>
+              <span class="veterinary-icon">⭐</span>
+              <span class="veterinary-icon">⭐</span>
+              <span class="veterinary-icon">⭐</span>
+              <span class="veterinary-icon">⭐</span>
+            </div>
+            <small class="text-success fw-bold">Verificado</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

@@ -1,0 +1,135 @@
+  <div class="container-fluid">
+    <div class="row min-vh-100">
+      <!-- Left Side - Welcome Section -->
+      <div class="col-lg-6 d-flex align-items-center bg-gradient-primary text-white">
+        <div class="container text-center">
+          <div class="animate-fade-in">
+            <span class="veterinary-icon" style="font-size: 4rem;">🐾</span>
+            <h1 class="display-4 fw-bold mt-4 mb-4">Clínica PetCare</h1>
+            <p class="lead fs-4 mb-4">Tu portal de confianza para el cuidado de tu mascota</p>
+            <div class="row g-4 mt-5">
+              <div class="col-md-4">
+                <span class="veterinary-icon large text-warning mb-3 d-block">📅</span>
+                <h5>Gestiona Citas</h5>
+                <p class="small">Agenda y modifica citas fácilmente</p>
+              </div>
+              <div class="col-md-4">
+                <span class="veterinary-icon large text-info mb-3 d-block">📋</span>
+                <h5>Historial Médico</h5>
+                <p class="small">Accede al historial completo</p>
+              </div>
+              <div class="col-md-4">
+                <span class="veterinary-icon large text-success mb-3 d-block">💊</span>
+                <h5>Recordatorios</h5>
+                <p class="small">Nunca olvides vacunas o medicamentos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Side - Login Form -->
+      <div class="col-lg-6 d-flex align-items-center">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-10 col-xl-8">
+              <form class="modern-card p-5" (ngSubmit)="onLogin()">
+                <div class="text-center mb-5">
+                  <span class="veterinary-icon extra-large text-primary mb-3 d-block">👤</span>
+                  <h2 class="fw-bold text-dark">Bienvenido de Vuelta</h2>
+                  <p class="text-muted">Ingresa a tu cuenta para continuar</p>
+                </div>
+
+                <div *ngIf="loginError" class="alert alert-danger border-0 rounded-4 mb-4 animate-fade-in">
+                  <div class="d-flex align-items-center">
+                    <span class="veterinary-icon me-2 text-danger">⚠️</span>
+                    <div>
+                      <strong>Error de Autenticación</strong><br>
+                      <small>Email o contraseña incorrectos. Intenta de nuevo.</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-floating mb-4">
+                  <input name="email" type="email" [(ngModel)]="email" 
+                         class="form-control border-0 bg-light rounded-4" 
+                         id="floatingEmail" placeholder="correo@ejemplo.com" required>
+                  <label for="floatingEmail">
+                    <span class="veterinary-icon me-2">✉️</span>Correo electrónico
+                  </label>
+                  @if (email && (!email.includes('@') || !email.includes('.'))) {
+                    <small class="text-danger mt-1 d-block">
+                      <span class="veterinary-icon me-1">❌</span>Dirección de correo electrónico no válida.
+                    </small>
+                  }
+                </div>
+                
+                <div class="form-floating mb-4">
+                  <input name="password" type="password" [(ngModel)]="password" 
+                         class="form-control border-0 bg-light rounded-4" 
+                         id="floatingPassword" placeholder="Contraseña" required>
+                  <label for="floatingPassword">
+                    <span class="veterinary-icon me-2">🔒</span>Contraseña
+                  </label>
+                </div>
+                
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="remember-me" id="rememberMe">
+                    <label class="form-check-label text-muted" for="rememberMe">
+                      Recordarme
+                    </label>
+                  </div>
+                  <a href="#" class="text-primary text-decoration-none small">¿Olvidaste tu contraseña?</a>
+                </div>
+                
+                <button class="btn btn-modern btn-primary btn-lg w-100 mb-4" type="submit" 
+                        [disabled]="!email || !password || isLoading">
+                  <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2"></span>
+                  <span class="veterinary-icon me-2" *ngIf="!isLoading">🚀</span>
+                  {{isLoading ? 'Iniciando sesión...' : 'Iniciar Sesión'}}
+                </button>
+          
+                <div class="divider mb-4">
+                  <hr class="my-3">
+                  <span class="divider-text bg-white px-3 text-muted small">O usa credenciales de demostración</span>
+                </div>
+                
+                <!-- Credenciales de demostración -->
+                <div class="demo-section mb-4">
+                  <div class="row g-2">
+                    <div *ngFor="let cred of demoCredentials" class="col-12">
+                      <button type="button" class="btn btn-outline-primary btn-sm w-100 rounded-4 d-flex align-items-center justify-content-between" 
+                              (click)="fillDemoCredentials(cred.email, cred.password)">
+                        <div class="d-flex align-items-center">
+                          <span class="veterinary-icon me-2">👤</span>
+                          <div class="text-start">
+                            <div class="fw-bold">{{cred.name}}</div>
+                            <small class="text-muted">{{cred.email}}</small>
+                          </div>
+                        </div>
+                        <span class="veterinary-icon">🔄</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="text-center mt-3">
+                    <small class="text-muted">
+                      <span class="veterinary-icon me-1">🔑</span>
+                      Contraseña para todas las cuentas: <strong>demo123</strong>
+                    </small>
+                  </div>
+                </div>
+                
+                <div class="text-center">
+                  <small class="text-muted">
+                    ¿No tienes cuenta? 
+                    <a href="#" class="text-primary text-decoration-none fw-bold">Regístrate aquí</a>
+                  </small>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

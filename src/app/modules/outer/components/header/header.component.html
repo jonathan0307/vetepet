@@ -1,0 +1,162 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary shadow fixed-top" style="min-height: 65px;">
+  <div class="container-fluid px-3">
+    <a class="navbar-brand fw-bold d-flex align-items-center me-3" routerLink="" style="min-width: 250px;">
+      <div class="d-flex align-items-center">
+        <!-- Logo principal con perrito -->
+        
+        <!-- Texto del logo -->
+        <div class="brand-text">
+          <span class="text-white fw-bold" style="font-size: 1.4rem;">Clínica PetCare</span>
+          <div class="d-flex align-items-center mt-1">
+            <span class="veterinary-icon me-1" style="font-size: 0.8rem;">🐾</span>
+            <small class="text-white-50" style="font-size: 0.7rem;">Cuidado profesional</small>
+          </div>
+        </div>
+      </div>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="gap: 0.25rem;">
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center px-3 py-2 rounded-3"
+            routerLink=""
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <i class="fas fa-home me-2 nav-icon"></i>
+            <span class="nav-text">Inicio</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center px-3 py-2 rounded-3"
+            routerLink="gallery"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <i class="fas fa-stethoscope me-2 nav-icon"></i>
+            <span class="nav-text">Servicios</span>
+          </a>
+        </li>
+        <!-- icono de clientes -->
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center px-3 py-2 rounded-3"
+            routerLink="customers"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <i class="fas fa-users me-2 nav-icon"></i>
+            <span class="nav-text d-none d-xl-inline">Clientes y Mascotas</span>
+            <span class="nav-text d-xl-none">Clientes</span>
+          </a>
+        </li>
+        <!-- icono de historial -->
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center px-3 py-2 rounded-3"
+              routerLink="tables"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }">
+              <i class="fas fa-notes-medical me-2 nav-icon"></i>
+              <span class="nav-text d-none d-xl-inline">Historial Médico</span>
+              <span class="nav-text d-xl-none">Historial</span>
+            </a>
+          </li>
+<!--
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center px-2 py-2 rounded-3" href="#" role="button" 
+             data-bs-toggle="dropdown" aria-expanded="false"
+             style="transition: all 0.3s ease; font-weight: 300; font-size: 0.9rem;">
+            <span class="veterinary-icon me-1" style="font-size: 1rem;">⚕️</span>
+            <span class="d-none d-xl-inline">Servicios Médicos</span>
+            <span class="d-xl-none">Médicos</span>
+          </a>
+          <ul class="dropdown-menu shadow-lg border-0 mt-2" style="min-width: 220px;">
+            <li>
+              <a class="dropdown-item d-flex align-items-center py-2 px-3" routerLink="/gallery">
+                <span class="veterinary-icon me-2" style="font-size: 1rem;">🩺</span>
+                <span>Consultas Generales</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center py-2 px-3" routerLink="/gallery">
+                <span class="veterinary-icon me-2" style="font-size: 1rem;">🔬</span>
+                <span>Cirugías</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center py-2 px-3" routerLink="/gallery">
+                <span class="veterinary-icon me-2" style="font-size: 1rem;">💉</span>
+                <span>Vacunación</span>
+              </a>
+            </li>
+            <li><hr class="dropdown-divider my-1"></li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center py-2 px-3" routerLink="/gallery">
+                <span class="veterinary-icon me-2" style="font-size: 1rem;">🚨</span>
+                <span>Emergencias 24/7</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+-->
+        <!-- icono de unformacion -->
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center px-3 py-2 rounded-3"
+            routerLink="directives"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <i class="fas fa-circle-info me-2 nav-icon"></i>
+            <span class="nav-text">Información</span>
+          </a>
+        </li>
+
+      </ul>
+      
+      <!-- Search Form - Compact 
+      <form class="d-none d-xl-flex me-2" role="search" style="min-width: 180px; max-width: 200px;">
+        <div class="input-group input-group-sm">
+          <input class="form-control border-0 bg-white bg-opacity-10 text-white placeholder-light" 
+                 type="search" placeholder="Buscar..." aria-label="Search"
+                 style="backdrop-filter: blur(10px); font-size: 0.85rem;">
+          <button class="btn btn-outline-light btn-sm border-0" type="submit"
+                  style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+            <span class="veterinary-icon" style="font-size: 0.9rem;">🔍</span>
+          </button>
+        </div>
+      </form>
+      -->
+<!-- User Actions - Compact -->
+      <div class="d-flex align-items-center gap-3 user-actions">
+
+                    <!-- Citas -->
+          <div class="position-relative">
+            <button class="btn btn-glass btn-sm d-flex align-items-center" 
+                    type="button" title="Citas pendientes">
+              <i class="fa-solid fa-calendar-check me-2 fs-5"></i>
+              <span class="d-none d-xl-inline fw-semibold">Citas</span>
+            </button>
+            <!-- 🔔 Badge fuera del botón para que no se oculte -->
+            <span class="badge bg-danger rounded-circle citas-badge">3</span>
+          </div>
+
+          <!-- Portal / Login -->
+          <button class="btn btn-white btn-sm d-flex align-items-center fw-semibold" 
+                  routerLink="login" title="Portal de Usuario">
+            <i class="fa-solid fa-user-circle me-2 fs-5"></i>
+            <span class="d-none d-md-inline">Portal</span>
+            <span class="d-md-none">Login</span>
+          </button>
+
+        </div>
+
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer for fixed navbar -->
+<div class="navbar-spacer" style="height: 70px;"></div>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+

@@ -1,0 +1,214 @@
+/* Footer Styles */
+footer {
+  background: linear-gradient(135deg, rgba(0, 98, 255, 0.95) 0%, rgba(0, 140, 255, 0.95) 100%);
+  position: relative;
+  width: 100%;
+  clear: both;
+  z-index: 10;
+  color: #fff;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00b4ff, #00e0ff, #4dfcff);
+}
+
+/* Social Links */
+.social-link {
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+  color: #00d4ff !important;
+}
+
+/* Footer Links */
+.footer-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.footer-link::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #00bfff;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::before {
+  width: 100%;
+}
+
+/* Contact Info */
+.contact-info .d-flex {
+  transition: all 0.3s ease;
+}
+
+.contact-info .d-flex:hover {
+  transform: translateX(5px);
+}
+
+.contact-info [data-feather] {
+  transition: all 0.3s ease;
+  color: #00d4ff;
+}
+
+.contact-info .d-flex:hover [data-feather] {
+  transform: scale(1.2);
+  color: #fff;
+}
+
+/* Newsletter Form */
+.newsletter-form .input-group .form-control {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.newsletter-form .input-group .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.newsletter-form .input-group .form-control:focus {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #00d4ff;
+  color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 212, 255, 0.25);
+}
+
+.newsletter-form .btn {
+  background: #00aaff;
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form .btn:hover {
+  transform: scale(1.05);
+  background: #00cfff;
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+/* Footer Bottom */
+.border-secondary {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Animations */
+[data-feather] {
+  transition: all 0.3s ease;
+}
+
+h4, h5, h6 {
+  position: relative;
+  color: #fff;
+}
+
+h4::after, h5::after, h6::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  background: #00d4ff;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
+  
+  .footer-link:hover {
+    transform: none;
+  }
+  
+  .contact-info .d-flex:hover {
+    transform: none;
+  }
+  
+  .social-link {
+    margin: 0 5px;
+  }
+}
+
+/* Hover effects for sections */
+.col-lg-4, .col-lg-2 {
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 992px) {
+  .col-lg-4:hover, .col-lg-2:hover {
+    transform: translateY(-5px);
+  }
+}
+.social-link i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover i {
+  color: #007bff;
+  transform: scale(1.2);
+}
+.footer-link {
+  color: #ccc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-link i {
+  color: #fff; /* iconos blancos */
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #fff; /* texto blanco al hover */
+}
+
+.footer-link:hover i {
+  color: #00bfff; /* azul suave al hover */
+  transform: translateX(5px);
+}
+.footer-bottom i {
+  color: #f9f6f6 !important; /* íconos negros por defecto */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-bottom a:hover i {
+  color: #00bfff !important; /* azul brillante al pasar el mouse */
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  margin-top: 1.5rem;
+}

@@ -1,0 +1,190 @@
+<main>
+  <!-- Hero Section -->
+  <section class="hero-section text-white position-relative overflow-hidden">
+  <div class="overlay"></div>
+  <div class="container position-relative z-2">
+    <div class="row py-5 text-center justify-content-center align-items-center">
+      <div class="col-lg-8 col-md-10 animate-fade-in">
+        <div class="icon-wrapper mb-4">
+          <span class="veterinary-icon extra-large text-warning">🐾 PetCare</span>
+        </div>
+
+        <h1 class="display-4 fw-bold mb-3">
+          Cuidado Veterinario Profesional para tu Mascota
+        </h1>
+
+        <p class="lead mb-5 fs-5 text-light opacity-90">
+          En <strong>PetCare</strong>, brindamos atención médica integral a tus mascotas con más de <b>15 años de experiencia</b>. 
+          Consultas, cirugías y emergencias las 24 horas, los 7 días de la semana.
+        </p>
+
+        <div class="d-flex gap-4 justify-content-center flex-wrap">
+          <a routerLink="/auth/login" class="btn btn-hero btn-light text-primary fw-semibold d-flex align-items-center px-4 py-2">
+            <span class="me-2 fs-4">📅</span> Agendar Cita
+          </a>
+
+          <a href="tel:+1555123456" class="btn btn-outline-hero d-flex align-items-center px-4 py-2 text-white border-light fw-semibold">
+            <span class="me-2 fs-4">📞</span> Emergencias 24/7
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Elemento decorativo opcional -->
+  <div class="wave"></div>
+</section>
+
+
+  <!-- Filter Section 
+  <section class="filter-section py-4 bg-white shadow-sm">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h5 class="mb-0 d-flex align-items-center">
+            <span class="veterinary-icon me-2 text-primary">🔍</span>
+            Filtrar Servicios
+          </h5>
+        </div>
+        <div class="col-md-6">
+          <div class="btn-group w-100" role="group">
+            <button class="btn btn-outline-primary active">
+              <span class="veterinary-icon me-2">🩺</span>Todos
+            </button>
+            <button class="btn btn-outline-primary">
+              <span class="veterinary-icon me-2">�</span>Preventivo
+            </button>
+            <button class="btn btn-outline-primary">
+              <span class="veterinary-icon me-2">🔬</span>Diagnóstico
+            </button>
+            <button class="btn btn-outline-primary">
+              <span class="veterinary-icon me-2">⚕️</span>Cirugía
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+-->
+<!-- Services Grid -->
+<section class="services-grid py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold display-6 text-primary mb-3">Nuestros Servicios</h2>
+      <p class="text-muted fs-5">Cuidado integral, amor y tecnología al servicio de tu mascota 🐾</p>
+      <div class="divider mx-auto my-4"></div>
+    </div>
+
+    <div class="row g-4">
+      @for (item of products; track item.id) {
+      <div class="col-lg-4 col-md-6">
+        <div class="card service-card border-0 shadow-lg h-100 rounded-4 overflow-hidden position-relative animate-scale-in">
+
+          <!-- Imagen -->
+          <div class="service-image-container position-relative overflow-hidden rounded-top">
+            <img class="service-image w-100" [src]="item.images[0]" alt="{{item.thumbnail}}">
+          </div>
+
+
+          <!-- Contenido -->
+          <div class="card-body p-4 d-flex flex-column">
+            <h5 class="fw-bold text-dark mb-2 d-flex align-items-center">
+              <i class="fas fa-stethoscope text-primary me-2"></i> {{item.title}}
+            </h5>
+
+            <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill mb-3 px-3 py-2">
+              <i class="fas fa-tags me-1"></i> {{item.category}}
+            </span>
+
+            <p class="text-muted flex-grow-1 lh-lg">{{item.description}}</p>
+
+            <div class="service-features mb-3">
+              <div class="row g-2">
+                <div class="col-6 d-flex align-items-center">
+                  <i class="fas fa-clock text-success me-2"></i>
+                  <small class="text-muted">30-45 min</small>
+                </div>
+                <div class="col-6 d-flex align-items-center">
+                  <i class="fas fa-star text-warning me-2"></i>
+                  <small class="text-muted">5.0 rating</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-price-section mb-4 border-top pt-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h6 class="text-success fw-bold mb-0 d-flex align-items-center">
+                    <i class="fas fa-money-bill-wave me-2"></i>
+                    <span>Desde S/{{item.price}}</span>
+                  </h6>
+                  <small class="text-muted">Precio incluye consulta</small>
+                </div>
+                <div class="rating-stars">
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-actions mt-auto d-grid gap-2">
+              <a [routerLink]="['/gallery', item.category, item.id]"
+                 class="btn btn-outline-primary rounded-pill d-flex align-items-center justify-content-center fw-bold">
+                <i class="fas fa-info-circle me-2"></i> Información Completa
+              </a>
+              <a routerLink="/auth/login"
+                 class="btn btn-primary rounded-pill d-flex align-items-center justify-content-center fw-bold">
+                <i class="fas fa-calendar-check me-2"></i> Agendar Cita
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      }
+    </div>
+
+
+      <!-- CTA Section -->
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <div class="modern-card contact-card p-5 shadow-lg rounded-4 border-0 bg-gradient-light position-relative overflow-hidden">
+            
+            <!-- Ícono superior -->
+            <div class="icon-wrapper mx-auto mb-4 d-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10" style="width: 90px; height: 90px;">
+              <i data-feather="heart" class="text-primary" style="width: 45px; height: 45px;"></i>
+            </div>
+
+            <!-- Título -->
+            <h3 class="fw-bold mb-3 text-dark">¿No encuentras el servicio que necesitas?</h3>
+            
+            <!-- Subtítulo -->
+            <p class="text-muted fs-5 mb-4 px-3">
+              Nuestro equipo está disponible para brindarte asesoría personalizada. 
+              ¡Contáctanos y te ayudaremos a encontrar la mejor atención para tu mascota!
+            </p>
+
+            <!-- Botones de acción -->
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <a href="tel:+51987654321" class="btn btn-modern btn-primary btn-lg d-flex align-items-center shadow-sm px-4 py-2 rounded-pill">
+                <i data-feather="phone-call" class="me-2"></i> Llamar Ahora
+              </a>
+
+              <a href="mailto:info@petcare.com" class="btn btn-modern btn-outline-primary btn-lg d-flex align-items-center shadow-sm px-4 py-2 rounded-pill">
+                <i data-feather="mail" class="me-2"></i> Enviar Email
+              </a>
+            </div>
+
+            <!-- Fondo decorativo suave -->
+            <div class="position-absolute top-0 start-50 translate-middle-x opacity-10" style="width: 250px; height: 250px; background: radial-gradient(circle, rgba(0,123,255,0.3), transparent); border-radius: 50%;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>

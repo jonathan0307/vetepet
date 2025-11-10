@@ -1,0 +1,33 @@
+.container {
+  padding-top: 2rem;
+}
+
+.img-fluid {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.list-unstyled li {
+  padding: 0.25rem 0;
+}
+
+@media (max-width: 768px) {
+  .d-flex.gap-3 {
+    flex-direction: column;
+  }
+  
+  .btn-lg {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}

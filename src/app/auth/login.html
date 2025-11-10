@@ -1,0 +1,122 @@
+<!-- Login Page with Full Screen Layout -->
+<div class="login-page d-flex align-items-center justify-content-center" style="min-height: 100vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 80px 20px 20px;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+        <div class="login-card modern-card shadow-lg" style="border: none; border-radius: 20px; overflow: hidden;">
+          <!-- Header Section -->
+          <div class="card-header text-center py-5" style="background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%); border: none;">
+            <div class="mb-3">
+              <span class="veterinary-icon" style="font-size: 4rem; color: white;">🏥</span>
+            </div>
+            <h2 class="text-white fw-bold mb-2">Portal Veterinario</h2>
+            <p class="text-white-50 mb-0">
+              <span class="veterinary-icon me-2">🐾</span>Clínica PetCare
+            </p>
+          </div>
+          
+          <!-- Body Section -->
+          <div class="card-body p-5">
+            <div class="text-center mb-4">
+              <h4 class="fw-bold text-dark mb-2">
+                <span class="veterinary-icon me-2 text-primary">🔒</span>Acceso Profesional
+              </h4>
+              <p class="text-muted">Ingresa con tus credenciales del personal</p>
+            </div>
+            
+            <form [formGroup]="form" (ngSubmit)="login()">
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  formControlName="email"
+                  class="form-control border-0 shadow-sm"
+                  placeholder="veterinario@petcare.com"
+                  required
+                  style="height: 60px; font-size: 1rem;"
+                >
+                <label for="email" class="text-muted">
+                  <span class="veterinary-icon me-2">📧</span>Correo del Personal
+                </label>
+              </div>
+              
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  formControlName="password"
+                  class="form-control border-0 shadow-sm"
+                  placeholder="Contraseña"
+                  required
+                  style="height: 60px; font-size: 1rem;"
+                >
+                <label for="password" class="text-muted">
+                  <span class="veterinary-icon me-2">🔑</span>Contraseña
+                </label>
+              </div>
+              
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" value="remember-me" id="rememberMe">
+                <label class="form-check-label text-muted" for="rememberMe">
+                  <span class="veterinary-icon me-1">💾</span>Recordar mi sesión
+                </label>
+              </div>
+              
+              <div *ngIf="loginError" class="alert alert-danger d-flex align-items-center mb-4" role="alert">
+                <span class="veterinary-icon me-2">⚠️</span>
+                <div>
+                  <strong>Error:</strong> Usuario no encontrado. Verifica tus credenciales.
+                </div>
+              </div>
+              
+              <button class="w-100 btn btn-modern btn-primary btn-lg py-3 mb-4" type="submit" [disabled]="!form.valid || isLoading">
+                <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2"></span>
+                <span *ngIf="!isLoading" class="veterinary-icon me-2">🚪</span>
+                {{isLoading ? 'Iniciando sesión...' : 'Iniciar Sesión'}}
+              </button>
+            </form>
+            
+            <!-- Demo Users Section -->
+            <div class="border-top pt-4">
+              <h6 class="text-center text-muted mb-3">
+                <span class="veterinary-icon me-2">👥</span>Usuarios de Demostración
+              </h6>
+              <div class="demo-users">
+                <div class="row g-2">
+                  <div *ngFor="let user of getDemoUsers()" class="col-12">
+                    <div class="card border-0 bg-light">
+                      <div class="card-body py-2 px-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <small class="fw-bold text-primary">{{user.email}}</small>
+                            <br>
+                            <small class="text-muted">{{user.role}}</small>
+                          </div>
+                          <button class="btn btn-sm btn-outline-primary" 
+                                  (click)="form.patchValue({email: user.email, password: '123456'})"
+                                  type="button">
+                            <span class="veterinary-icon">👆</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Footer -->
+          <div class="card-footer text-center py-3 bg-light border-0">
+            <small class="text-muted">
+              <span class="veterinary-icon me-1">🛡️</span>
+              Sistema exclusivo para personal autorizado de PetCare
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

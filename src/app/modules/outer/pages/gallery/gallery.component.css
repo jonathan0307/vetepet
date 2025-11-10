@@ -1,0 +1,280 @@
+/* Gallery Component Styles */
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  position: relative;
+  overflow: hidden;
+  color: #fff; /* Texto blanco por defecto */
+}
+
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="30" r="1.5" fill="rgba(255,255,255,0.08)"/></svg>');
+  animation: float 30s infinite linear;
+  opacity: 0.4;
+}
+
+.hero-section h1, 
+.hero-section p {
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Mejora contraste */
+}
+
+/* Filter Section */
+.filter-section {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+
+/* Service Cards */
+.service-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  color: #212529;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.service-image-container {
+  position: relative;
+  height: 220px;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.05);
+}
+
+/* Overlay con mejor contraste */
+.service-overlay {
+  background: linear-gradient(45deg, rgba(180, 194, 209, 0.85), rgba(0, 86, 179, 0.85));
+  opacity: 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(2px);
+  color: #fff;
+}
+
+.service-card:hover .service-overlay {
+  opacity: 1;
+}
+
+/* Precio con más legibilidad */
+.service-price {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.service-price h6 {
+  margin: 0;
+  color: #fff !important;
+}
+
+/* Hero section typography */
+.display-4 {
+  background: linear-gradient(135deg, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Button enhancements */
+.btn-group .btn {
+  transition: all 0.3s ease;
+  color: #fff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+}
+
+.btn-group .btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #0056b3, #004099);
+}
+
+/* Card body */
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1b1b1b;
+}
+
+.card-text {
+  color: #495057;
+  line-height: 1.6;
+}
+
+/* Rating stars */
+.rating {
+  color: #ffc107;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Availability badge */
+.availability-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 123, 255, 0.95);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.availability-badge.emergency {
+  background: rgba(220, 53, 69, 0.95);
+}
+
+.availability-badge.appointment {
+  background: rgba(255, 193, 7, 0.95);
+  color: #212529;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .service-card:hover {
+    transform: none;
+  }
+
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .btn-lg {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Animation for cards appearing */
+.col {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.col:nth-child(1) { animation-delay: 0.1s; }
+.col:nth-child(2) { animation-delay: 0.2s; }
+.col:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Category color coding (with better contrast) */
+.service-card[data-category="consultas"] .card-title { color: #0056b3; }
+.service-card[data-category="vacunacion"] .card-title { color: #218838; }
+.service-card[data-category="cirugia"] .card-title { color: #c82333; }
+.service-card[data-category="emergencias"] .card-title { color: #e8590c; }
+.service-card[data-category="odontologia"] .card-title { color: #6f42c1; }
+.service-card[data-category="diagnostico"] .card-title { color: #117a8b; }
+.service-card[data-category="grooming"] .card-title { color: #d63384; }
+.service-card[data-category="hospitalizacion"] .card-title { color: #495057; }
+.service-card[data-category="nutricion"] .card-title { color: #13856b; }
+
+/* === Layout de Tarjetas === */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  padding: 2rem 0;
+}
+
+/* Alineación uniforme del contenido interno */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Mantiene alineación entre el texto y los botones */
+.service-card .card-text {
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+
+/* === Refinamiento visual profesional === */
+.service-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Mejor tipografía */
+.card-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-text {
+  color: #f2e8e8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Botones uniformes */
+.service-card .btn {
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+}
+
+.service-card .btn-primary {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 91, 230, 0.3);
+}
+
+.service-card .btn-primary:hover {
+  background: linear-gradient(135deg, #0056b3, #004099);
+  transform: translateY(-2px);
+}
+

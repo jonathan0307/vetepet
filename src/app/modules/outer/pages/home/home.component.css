@@ -1,0 +1,263 @@
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+.hero-section img {
+  transition: transform 0.3s ease;
+}
+
+.hero-section img:hover {
+  transform: scale(1.05);
+}
+
+/* Main pet image styling */
+.main-pet-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-pet-image img {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-main-image {
+  background-color: #f8f9fa;
+  min-height: 300px;
+  display: block;
+}
+
+/* Fallback styling if image fails to load */
+.hero-main-image[src*="placeholder"] {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Floating pets animation */
+.floating-pets {
+  position: relative;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(5deg); }
+  50% { transform: translateY(-20px) rotate(0deg); }
+  75% { transform: translateY(-10px) rotate(-5deg); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Feature Cards */
+.feature-card {
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.feature-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Stats Section */
+.stats-section {
+  background: #f8f9fa;
+}
+
+.stat-item h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* Categories Section */
+.category-card {
+  height: 250px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+}
+
+.category-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover .category-overlay {
+  opacity: 1;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #343a40 0%, #212529 100%);
+}
+
+/* User Profile Section */
+.user-profile-section {
+  background: #f8f9fa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 60vh;
+    text-align: center;
+  }
+  
+  .hero-section .col-lg-6:first-child {
+    margin-bottom: 2rem;
+  }
+  
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .display-5 {
+    font-size: 2rem;
+  }
+}
+
+/* Button animations */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon animations */
+[data-feather] {
+  transition: all 0.3s ease;
+}
+
+.btn:hover [data-feather] {
+  transform: scale(1.1);
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+
+
+/* ====== TESTIMONIOS - ALINEACIÓN PERFECTA ====== */
+
+.testimonials-section {
+  background: #f8f9fa;
+  padding: 5rem 0;
+}
+
+.testimonials-section .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch; /* ✅ todas las tarjetas tendrán la misma altura */
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* ✅ contenido equilibrado */
+  height: 100%; /* asegura que las tarjetas se alineen */
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card p {
+  flex-grow: 1; /* ✅ el texto ocupa el espacio necesario sin romper el alineado */
+  color: #555;
+}
+
+.testimonial-card img {
+  border: 3px solid #007bff;
+}
+
+.testimonial-card h5 {
+  color: #212529;
+}
+
+.testimonial-card small.text-muted {
+  color: #6c757d !important;
+}
+
+/* Título general */
+.testimonials-section h2 {
+  background: linear-gradient(90deg, #007bff, #00a2ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Estrellas */
+.text-warning .veterinary-icon {
+  font-size: 1.2rem;
+}
+
+/* Animaciones suaves */
+.animate-scale-in {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: scaleIn 0.6s ease forwards;
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .testimonial-card {
+    margin-bottom: 1.5rem;
+  }
+}
