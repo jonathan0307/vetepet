@@ -1,5 +1,5 @@
 {
-  "name": "angular-course",
+  "name": "vetepet",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:angular-course": "node dist/angular-course/server/server.mjs"
+    "serve:ssr:angular-course": "node dist/angular-course/server/server.mjs",
+    "start:ssr": "npm run serve:ssr:angular-course"
   },
   "private": true,
   "dependencies": {
