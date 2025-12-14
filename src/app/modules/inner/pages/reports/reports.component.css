@@ -1,0 +1,20 @@
+.modern-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.table thead th {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 6px 12px;
+}
+
+button.btn {
+  border-radius: 12px;
+}

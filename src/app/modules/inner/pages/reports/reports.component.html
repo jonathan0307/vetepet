@@ -1,88 +1,72 @@
-  <!-- Header -->
-  <div class="p-5 bg-warning text-center">
-    <h1>Sticky Navbar Example</h1>
+<div class="modern-card p-4">
+  <div class="d-flex justify-content-between mb-4">
+    <h3 class="fw-bold d-flex align-items-center">
+      <span class="veterinary-icon me-3 text-primary">📊</span>
+      Registro de Citas Médicas
+    </h3>
   </div>
 
-  <!-- Page Content -->
-  <div class="container mt-4">
-    <div class="p-5 mb-4 bg-light rounded-3">
-      <h2>Welcome!</h2>
-      <p class="lead">This is a sample Bootstrap page with a sticky top navbar.</p>
-    </div>
+  <div class="table-responsive">
+    <table class="table table-hover align-middle">
+      <thead class="bg-light">
+        <tr>
+          <th>N°</th>
+          <th>Mascota</th>
+          <th>Propietario</th>
+          <th>Servicio</th>
+          <th>Fecha</th>
+          <th>Estado</th>
+          <th class="text-center">Acciones</th>
+        </tr>
+      </thead>
 
-  <table class="table table-bordered table-hover">
-  <thead class="table-light">
-    <tr class="sticky-top">
-      <th>#</th>
-      <th>First</th>
-      <th>Last</th>
-      <th>Email</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>John</td>
-      <td>Doe</td>
-      <td>johnexample.com</td>
-      <td>Active</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jane</td>
-      <td>Smith</td>
-      <td>janeexample.com</td>
-      <td>Inactive</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Mike</td>
-      <td>Jones</td>
-      <td>mikeexample.com</td>
-      <td>Active</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Emily</td>
-      <td>Brown</td>
-      <td>emilyexample.com</td>
-      <td>Active</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Chris</td>
-      <td>Lee</td>
-      <td>chrisexample.com</td>
-      <td>Inactive</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>Anna</td>
-      <td>White</td>
-      <td>annaexample.com</td>
-      <td>Pending</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>Paul</td>
-      <td>Adams</td>
-      <td>paulexample.com</td>
-      <td>Active</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>Lisa</td>
-      <td>Clark</td>
-      <td>lisaexample.com</td>
-      <td>Inactive</td>
-    </tr>
-  </tbody>
-</table>
+      <tbody>
+        <tr *ngFor="let c of citas; let i = index">
+          <td class="fw-bold text-primary">{{ i + 1 }}</td>
 
-    <!-- Filler content to show scroll behavior -->
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-    <p style="height: 1000px;">(scroll down to test sticky navbar)</p>
+          <td>
+            <span class="me-2 veterinary-icon">
+              {{ c.especie === 'Perro' ? '🐕' : '🐱' }}
+            </span>
+            {{ c.nombreMascota }}
+          </td>
 
+          <td>{{ c.nombreDueno }}</td>
+          <td>
+            <span class="badge bg-primary rounded-pill">{{ c.motivo }}</span>
+          </td>
+
+          <td>{{ c.fecha }}</td>
+
+          <td>
+            <span 
+              class="badge rounded-pill"
+              [ngClass]="{
+                'bg-warning': c.estado === 'Pendiente',
+                'bg-info': c.estado === 'En Proceso',
+                'bg-success': c.estado === 'Completada'
+              }">
+              {{ c.estado }}
+            </span>
+          </td>
+
+          <td class="text-center">
+
+            <!-- Cambiar estado -->
+            <button class="btn btn-sm btn-outline-primary me-2" 
+                    (click)="cambiarEstado(c)">
+              🔄
+            </button>
+
+            <!-- Eliminar -->
+            <button class="btn btn-sm btn-outline-danger"
+                    (click)="eliminarCita(i)">
+              🗑️
+            </button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
+</div>

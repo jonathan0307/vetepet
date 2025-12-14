@@ -78,35 +78,14 @@
               </button>
             </form>
             
-            <!-- Demo Users Section -->
-            <div class="border-top pt-4">
-              <h6 class="text-center text-muted mb-3">
-                <span class="veterinary-icon me-2">👥</span>Usuarios de Demostración
-              </h6>
-              <div class="demo-users">
-                <div class="row g-2">
-                  <div *ngFor="let user of getDemoUsers()" class="col-12">
-                    <div class="card border-0 bg-light">
-                      <div class="card-body py-2 px-3">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div>
-                            <small class="fw-bold text-primary">{{user.email}}</small>
-                            <br>
-                            <small class="text-muted">{{user.role}}</small>
-                          </div>
-                          <button class="btn btn-sm btn-outline-primary" 
-                                  (click)="form.patchValue({email: user.email, password: '123456'})"
-                                  type="button">
-                            <span class="veterinary-icon">👆</span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+
           </div>
+          <div class="text-center mt-4">
+  <a routerLink="/register" class="text-primary fw-bold" style="cursor:pointer;">
+    ¿No tienes cuenta? Crear usuario
+  </a>
+</div>
+
           
           <!-- Footer -->
           <div class="card-footer text-center py-3 bg-light border-0">

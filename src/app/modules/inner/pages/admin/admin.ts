@@ -7,3 +7,4 @@ import { Component } from '@angular/core';
   styleUrl: './admin.component.css'
 })
 export default class Admin {}
+ 

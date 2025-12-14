@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LayoutComponent } from './shared/components/layout/layout.component';
 import { RouterOutlet } from "@angular/router";
 
+
 @Component({
     selector: 'app-root',
     standalone: true,

@@ -1,0 +1,31 @@
+.titulo {
+  font-weight: 700;
+  color: #1F7A8C;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.sombra {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.form-label {
+  font-weight: 600;
+  color: #145369;
+}
+
+.btn-primary {
+  background-color: #1F7A8C;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #195f6e;
+}
+
+.alert {
+  font-size: 16px;
+  border-radius: 10px;
+}

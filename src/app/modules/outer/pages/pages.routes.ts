@@ -14,7 +14,7 @@ export const routes: Routes = [
     path: 'login', 
     loadComponent: () => import('../../../auth/login').then(m => m.default)
   },
-  { path: 'servicios', redirectTo: 'gallery', pathMatch: 'full' },
+
   { path: 'gallery', component: GalleryComponent },
   { path: 'gallery/:category/:id', component: ProductDetailsComponent },
   { path: 'servicio/:category/:id', component: ProductDetailsComponent },

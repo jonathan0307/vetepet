@@ -373,6 +373,7 @@ app-footer:not(:last-child) {
   background: rgba(255, 255, 255, 0.95) !important;
   margin-top: 8px !important;
   padding: 0.5rem 0 !important;
+  
 }
 
 .dropdown-item {
@@ -684,6 +685,7 @@ app-footer:not(:last-child) {
 
 /* Dropdown Enhancements */
 .dropdown-menu {
+  position: absolute;
   border: none;
   border-radius: 15px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
@@ -1216,4 +1218,14 @@ app-footer:not(:last-child) {
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 50%;
+}
+.navbar {
+  position: relative;
+  z-index: 50;
+}
+
+.dropdown-menu {
+  position: absolute !important;
+  z-index: 99999 !important;
+  transform: translate3d(0, 40px, 0) !important; /* fuerza a aparecer encima */
 }

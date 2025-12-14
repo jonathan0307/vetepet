@@ -58,10 +58,6 @@ import { HasRoleDirective } from '../../../core/hasRole.directive';
               </a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
         </div>
       </div>
     </nav>
@@ -84,16 +80,19 @@ export default class Header {
   currentUser = toSignal(this._authService.currentUser$);
 
   users = signal(users);
-
+ 
   logout() {
     this._authService.logout();
   }
 
   selectedUser(user: User) {
-    this._authService.login(user.email).subscribe();
+    this._authService.login(user.email, '123456').subscribe();
   }
 
   hasRole(roles: UserRole[]) {
-    return this.currentUser()?.roles.some((role) => roles.includes(role));
+    return this.currentUser()?.roles.some(
+      (role: UserRole | string) => roles.includes(role as UserRole)
+    );
   }
 }
+ 
