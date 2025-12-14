@@ -26,13 +26,16 @@ Sistema web completo para la gestión de una clínica veterinaria desarrollado c
 
 ```bash
 # Clonar el repositorio
-git clone [repository-url]
+git clone https://github.com/jonathan0307/vetepet.git
 
 # Instalar dependencias
 npm install
 
 # Iniciar servidor de desarrollo
 ng serve
+
+# Para Server-side rendering (SSR) en producción/entorno local
+npm run start:ssr
 
 # Navegar a http://localhost:4200
 ```
