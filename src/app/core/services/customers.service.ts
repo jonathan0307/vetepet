@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, throwError, of } from 'rxjs';
+import { Customer } from '../../interfaces/interfaceCustomer';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class CustomersService {
   private apiUrl = 'http://localhost:8080/customers';
   
   // Datos mock para desarrollo
-  private mockCustomers = [
+  private mockCustomers: Customer[] = [
     {
       id: 1,
       name: 'Juan Pérez',
@@ -36,7 +37,7 @@ export class CustomersService {
   constructor(private http: HttpClient) { }
 
   // Obtener clientes (GET)
-  getCustomers(): Observable<any> {
+  getCustomers(): Observable<{ customers: Customer[] }> {
     // Usar datos mock en lugar del HTTP request
     return of({ customers: this.mockCustomers });
     
@@ -45,9 +46,9 @@ export class CustomersService {
   }
 
   // Crear un cliente (POST)
-  createCustomer(customer: any): Observable<any> {
+  createCustomer(customer: Customer): Observable<Customer> {
     // Simulación con datos mock
-    const newId = Math.max(...this.mockCustomers.map(c => c.id)) + 1;
+    const newId = Math.max(...this.mockCustomers.map(c => Number(c.id || 0))) + 1;
     const newCustomer = { ...customer, id: newId };
     this.mockCustomers.push(newCustomer);
     return of(newCustomer);
@@ -74,7 +75,7 @@ export class CustomersService {
   }
 
   // Actualizar un cliente existente (PUT)
-  updateCustomer(customer: any): Observable<any> {
+  updateCustomer(customer: Customer): Observable<Customer> {
     // Simulación con datos mock
     const index = this.mockCustomers.findIndex(c => c.id === customer.id);
     if (index !== -1) {
@@ -106,7 +107,7 @@ export class CustomersService {
   }
 
   // Eliminar un cliente (DELETE)
-  deleteCustomer(customerId: number): Observable<any> {
+  deleteCustomer(customerId: number | string): Observable<Customer> {
     // Simulación con datos mock
     const index = this.mockCustomers.findIndex(c => c.id === customerId);
     if (index !== -1) {
