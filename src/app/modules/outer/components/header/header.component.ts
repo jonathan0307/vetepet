@@ -22,6 +22,6 @@ export class HeaderComponent implements AfterViewInit {
   scrollToService(serviceType: string) {
     // This method will scroll to the specific service on the gallery page
     // For now, we'll just navigate to gallery and let the user find the service
-    console.log(`Navigating to service: ${serviceType}`);
+    console.debug(`Navigating to service: ${serviceType}`);
   }
 }

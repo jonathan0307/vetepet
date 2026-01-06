@@ -20,7 +20,7 @@ export class CustomersComponent implements OnInit {
   ngOnInit(): void {
     this.customersService.getCustomers().subscribe(data => {
       this.customers = data.customers || data;
-      console.log(this.customers);
+      console.debug(this.customers);
     });
   }
 
